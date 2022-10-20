@@ -1652,6 +1652,13 @@ breach_data = [
     "leaktypes": "Email addresses, Passwords"
   },
   {
+    "name": "Exploit.in",
+    "description": "In late 2016, a huge list of email address and password pairs appeared in a 'combo list' referred to as 'Exploit.In'. The list contained 593 million unique email addresses, many with multiple different passwords hacked from various online systems. The list was broadly circulated and used for 'credential stuffing', that is attackers employ it in an attempt to identify other online systems where the account owner had reused their password.",
+    "date": "2016-10-13",
+    "leakcount": 593427119,
+    "leaktypes": "Email addresses, Passwords"
+  },
+  {
     "name": "wftor.de",
     "description": "In January 2019, a large collection named 'Collection #1' of credential stuffing lists (combinations of email addresses and passwords used to hijack accounts on other services) was discovered being distributed on a popular hacking forum. The data contained almost 2.7 billion records including 773 million unique email addresses alongside passwords those addresses had used on other breached services.",
     "date": "2019-01-07",
