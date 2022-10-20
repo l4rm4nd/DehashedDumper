@@ -1,6 +1,7 @@
 import requests
 import json
 import argparse
+from email.utils import parseaddr
 from datetime import datetime
 
 parser = argparse.ArgumentParser("dehasheddumper.py")
@@ -32,7 +33,7 @@ print()
 dehashed_user="<email>"
 dehashed_apikey="<api-token>"
 
-date = datetime.now().strftime("%d%m%Y")
+date = datetime.now().strftime("%Y%m%d")
 
 if (args.email):
 	dehashed_user = args.email
@@ -60,10 +61,14 @@ for domain in domains:
 	    "Accept": "application/json"
 	}
 
-	print("[i] Performing leak check on " + str(domain))
-
 	try:
 		response = requests.get(url, params=params, headers=headers, auth=(dehashed_user, dehashed_apikey))
+		
+		if (response.status_code != 200):
+			print("[" + str(response.status_code) + "] Dehashed down or invalid API credentials.")
+			exit()
+		
+		print("[i] Performing leak check on " + str(domain))
 		# file containing user email addresses
 		user_file = open(str(date) + "_DD_" + str(domain) + "_users.lst", "a")
 		# file containing leaked user passwords
@@ -76,9 +81,9 @@ for domain in domains:
 		passwords = [] 
 
 		for leak in data['entries']:
-			if ("@"+domain in leak['email']):
+			if ("@"+domain in parseaddr(str(leak['email']))[1]):
 				identifier=str(leak['id'])
-				email=str(leak['email'])
+				email=parseaddr(str(leak['email']))[1]
 				username=str(leak['username'])
 				password=str(leak['password'])
 				hashed_password=str(leak['hashed_password'])
@@ -112,6 +117,7 @@ for domain in domains:
 
 		user_file.close()
 		password_file.close()
+		
 		print("[i] Finished leak check on " + str(domain))
 		print("    > " + str(len(unique_users)) + " unique user emails found!")
 		print("    > " + str(len(unique_passwords)) + " unique passwords found!")
