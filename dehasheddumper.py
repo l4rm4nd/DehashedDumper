@@ -33,7 +33,7 @@ print()
 dehashed_user="<email>"
 dehashed_apikey="<api-token>"
 
-date = datetime.now().strftime("%Y%m%d")
+date = datetime.now().strftime("%Y%m%d-%H%M")
 
 if (args.email):
 	dehashed_user = args.email
