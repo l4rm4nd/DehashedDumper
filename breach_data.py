@@ -14,6 +14,13 @@ breach_data = [
     "leaktypes": "Dates of birth, Email addresses, Genders, Geographic locations, IP addresses, Names, Passwords, Usernames"
   },
   {
+    "name": "NeoPets",
+    "description": "In May 2016, a set of breached data originating from the virtual pet website 'Neopets' was found being traded online. Allegedly hacked 'several years earlier', the data contains sensitive personal information including birthdates, genders and names as well as almost 27 million unique email addresses. Passwords were stored in plain text and IP addresses were also present in the breach.",
+    "date": "2013-05-05",
+    "leakcount": 26892897,
+    "leaktypes": "Dates of birth, Email addresses, Genders, Geographic locations, IP addresses, Names, Passwords, Usernames"
+  },  
+  {
     "name": "Coachella",
     "description": "N/A",
     "date": "2017-02-22",
@@ -2506,6 +2513,13 @@ breach_data = [
     "leaktypes": "N/A"
   },
   {
+    "name": "microstationconnections.com (2)_cleaned",
+    "description": "Data from a collection that included Microstation Connections was found exposed online.",
+    "date": "",
+    "leakcount": "",
+    "leaktypes": "N/A"
+  },  
+  {
     "name": "rkeis.aw-online.de",
     "description": "In January 2019, a large collection named 'Collection #1' of credential stuffing lists (combinations of email addresses and passwords used to hijack accounts on other services) was discovered being distributed on a popular hacking forum. The data contained almost 2.7 billion records including 773 million unique email addresses alongside passwords those addresses had used on other breached services.",
     "date": "2019-01-07",
@@ -2596,6 +2610,13 @@ breach_data = [
     "leakcount": 25865722,
     "leaktypes": "Device information, Email addresses, Names, Passwords, Social media profiles"
   },
+  {
+    "name": "mathway",
+    "description": "N/A",
+    "date": "2020-01-13",
+    "leakcount": 25865722,
+    "leaktypes": "Device information, Email addresses, Names, Passwords, Social media profiles"
+  },  
   {
     "name": "Bell (2017 breach)",
     "description": "In May 2017, the Bell telecommunications company in Canada suffered a data breach resulting in the exposure of millions of customer records. The data was consequently leaked online with a message from the attacker stating that they were 'releasing a significant portion of Bell.cas data due to the fact that they have failed to cooperate with us' and included a threat to leak more. The impacted data included over 2 million unique email addresses and 153k survey results dating back to 2011 and 2012. There were also 162 Bell employee records with more comprehensive personal data including names, phone numbers and plain text 'passcodes'. Bell suffered another breach in 2014 which exposed 40k records.",
@@ -2981,6 +3002,13 @@ breach_data = [
     "leakcount": 7089395,
     "leaktypes": "Email addresses, Passwords, Usernames"
   },
+  {
+    "name": "LifeBoat",
+    "description": "In January 2016, the minecraft community known as lifeboat was hacked and more than 7 million accounts leaked. Lifeboat knew of the incident for three months before the breach was made public but elected not to advise customers. The leaked data included usernames, email addresses and passwords stored as straight MD5 hashes.",
+    "date": "2016-01-01",
+    "leakcount": 7089395,
+    "leaktypes": "Email addresses, Passwords, Usernames"
+  },  
   {
     "name": "schema-k.de",
     "description": "In January 2019, a large collection named 'Collection #1' of credential stuffing lists (combinations of email addresses and passwords used to hijack accounts on other services) was discovered being distributed on a popular hacking forum. The data contained almost 2.7 billion records including 773 million unique email addresses alongside passwords those addresses had used on other breached services.",
@@ -3422,6 +3450,13 @@ breach_data = [
     "leakcount": 7067490,
     "leaktypes": "Email Addresses, Passwords(Plaintext)"
   },
+  {
+    "name": "omgpop_com",
+    "description": "N/A",
+    "date": "2019-01-01",
+    "leakcount": 7067490,
+    "leaktypes": "Email Addresses, Passwords(Plaintext)"
+  },  
   {
     "name": "designity.com",
     "description": "In January 2019, a large collection named 'Collection #1' of credential stuffing lists (combinations of email addresses and passwords used to hijack accounts on other services) was discovered being distributed on a popular hacking forum. The data contained almost 2.7 billion records including 773 million unique email addresses alongside passwords those addresses had used on other breached services.",
@@ -5026,6 +5061,13 @@ breach_data = [
     "leaktypes": "Email addresses, Passwords"
   },
   {
+    "name": "KickStarter",
+    "description": "In February 2014, the crowdfunding platform Kickstarter announced theyd suffered a data breach. The breach contained almost 5.2 million unique email addresses, usernames and salted SHA1 hashes of passwords.",
+    "date": "2014-02-16",
+    "leakcount": 5176463,
+    "leaktypes": "Email addresses, Passwords"
+  },  
+  {
     "name": "CheapAssGamer.com",
     "description": "In approximately mid-2015, the forum for CheapAssGamer.com suffered a data breach. The database from the IP.Board based forum contained 445k accounts including usernames, email and IP addresses and salted MD5 password hashes.",
     "date": "2015-07-01",
@@ -6013,6 +6055,13 @@ breach_data = [
     "leaktypes": "Dates of birth, Email addresses, Geographic locations, Names"
   },
   {
+    "name": "JustDate",
+    "description": "An alleged breach of the dating website Justdate.com began circulating in approximately September 2016. Comprised of over 24 million records, the data contained various personal attributes such as email addresses, dates of birth and physical locations. However, upon verification with DeHashed subscribers, only a fraction of the data was found to be accurate and no account owners recalled using the Justdate.com service.",
+    "date": "2016-07-29",
+    "leakcount": 24451312,
+    "leaktypes": "Dates of birth, Email addresses, Geographic locations, Names"
+  },  
+  {
     "name": "philharmonische-gesellschaft-owl.de",
     "description": "In January 2019, a large collection named 'Collection #1' of credential stuffing lists (combinations of email addresses and passwords used to hijack accounts on other services) was discovered being distributed on a popular hacking forum. The data contained almost 2.7 billion records including 773 million unique email addresses alongside passwords those addresses had used on other breached services.",
     "date": "2019-01-07",
@@ -6377,6 +6426,13 @@ breach_data = [
     "leaktypes": "Dates of birth, Email addresses, Names, Phone numbers, Physical addresses"
   },
   {
+    "name": "mgm",
+    "description": "N/A",
+    "date": "2019-07-25",
+    "leakcount": 10613880,
+    "leaktypes": "Dates of birth, Email addresses, Names, Phone numbers, Physical addresses"
+  },  
+  {
     "name": "hobbysquawk.com",
     "description": "N/A",
     "date": "",
@@ -6628,6 +6684,13 @@ breach_data = [
     "leakcount": 37217682,
     "leaktypes": "Email addresses, Passwords, Usernames, Website activity"
   },
+  {
+    "name": "LastFM",
+    "description": "In March 2012, the music website Last.fm was hacked and 43 million user accounts were exposed. Whilst Last.fm knew of an incident back in 2012, the scale of the hack was not known until the data was released publicly in September 2016. The breach included 37 million unique email addresses, usernames and passwords stored as unsalted MD5 hashes.",
+    "date": "2012-03-22",
+    "leakcount": 37217682,
+    "leaktypes": "Email addresses, Passwords, Usernames, Website activity"
+  },  
   {
     "name": "mjakmama24.pl",
     "description": "N/A",
@@ -8211,6 +8274,13 @@ breach_data = [
     "leaktypes": "Email Addresses, Usernames, Passwords"
   },
   {
+    "name": "foxit",
+    "description": "N/A",
+    "date": "2015-10-01",
+    "leakcount": 555793,
+    "leaktypes": "Email Addresses, Usernames, Passwords"
+  },  
+  {
     "name": "Forums.iobit.com",
     "description": "N/A",
     "date": "",
@@ -9114,6 +9184,13 @@ breach_data = [
     "leaktypes": "N/A"
   },
   {
+    "name": "Glofox.com",
+    "description": "N/A",
+    "date": "",
+    "leakcount": 2579835,
+    "leaktypes": "N/A"
+  },  
+  {
     "name": "forum.theonyxpath.com",
     "description": "N/A",
     "date": "",
@@ -9730,6 +9807,13 @@ breach_data = [
     "leaktypes": "Email addresses, Passwords"
   },
   {
+    "name": "Pemiblanc",
+    "description": "In April 2018, a credential stuffing list containing 111 million email addresses and passwords known as Pemiblanc was discovered on a French server. The list contained email addresses and passwords collated from different data breaches and used to mount account takeover attacks against other services.",
+    "date": "2018-04-02",
+    "leakcount": 134612515,
+    "leaktypes": "Email addresses, Passwords"
+  },  
+  {
     "name": "Jabbim",
     "description": "In December of 2014, the XMPP chat domain known as Jabbim suffered a data breach exposing 21,393 user accounts. The data included things such as Username, Passwords.",
     "date": "2014-12-22",
@@ -10255,6 +10339,13 @@ breach_data = [
     "leaktypes": "Email Addresses, Passwords, Usernames"
   },
   {
+    "name": "livejournal_com",
+    "description": "N/A",
+    "date": "2017-01-01",
+    "leakcount": 33724393,
+    "leaktypes": "Email Addresses, Passwords, Usernames"
+  },  
+  {
     "name": "tvbb.tvpro-online.de",
     "description": "In January 2019, a large collection named 'Collection #1' of credential stuffing lists (combinations of email addresses and passwords used to hijack accounts on other services) was discovered being distributed on a popular hacking forum. The data contained almost 2.7 billion records including 773 million unique email addresses alongside passwords those addresses had used on other breached services.",
     "date": "2019-01-07",
@@ -10667,6 +10758,13 @@ breach_data = [
     "leakcount": 1311610,
     "leaktypes": "Dates of birth, Email addresses, IP addresses, Passwords, Usernames"
   },
+  {
+    "name": "MangaFox.me [Forum]",
+    "description": "In approximately July 2016, the manga website known as mangafox.me suffered a data breach. The vBulletin based forum exposed 1.3 million accounts including usernames, email and IP addresses, dates of birth and salted MD5 password hashes.",
+    "date": "2014-06-01",
+    "leakcount": 1311610,
+    "leaktypes": "Dates of birth, Email addresses, IP addresses, Passwords, Usernames"
+  },  
   {
     "name": "forum.scriptcase.net",
     "description": "N/A",
