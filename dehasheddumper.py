@@ -44,6 +44,7 @@ dehashed_apikey="<api-token>"
 
 date = datetime.now().strftime("%Y%m%d-%H%M")
 balance = 0
+checkAPI = True
 
 if (args.email):
 	dehashed_user = args.email
@@ -72,17 +73,21 @@ for domain in domains:
 	}
 
 	try:
-
-		# if API does not respond with status code 200
-		print("[~] Verifying Dehashed API credentials. Please wait...")
+		# only print API access testing once
+		if checkAPI:
+			print("[~] Verifying Dehashed API credentials. Please wait...")
+			checkAPI = False
 		response = requests.get(url, params=params, headers=headers, auth=(dehashed_user, dehashed_apikey))
 		data = response.json()
 
+		# if API does not respond with status code 200
 		if (response.status_code != 200):
 			print(bcolors.FAIL + "[x]" + bcolors.ENDC + " Status " + str(response.status_code) + " - Dehashed down or invalid API credentials.")
 			exit()
 		else:
-			print(bcolors.OK + "[✓]" + bcolors.ENDC + " Successful API authentication. Let's go looting..." + bcolors.ENDC)
+			# only print API access testing once
+			if checkAPI:
+				print(bcolors.OK + "[✓]" + bcolors.ENDC + " Successful API authentication. Let's go looting..." + bcolors.ENDC)
 			balance = data['balance']
 			print()
 
@@ -92,6 +97,7 @@ for domain in domains:
 		if (data['total'] == 0):
 			print(bcolors.WARNING + "[✓]" + bcolors.ENDC + " Finished leak check on " + str(domain) + bcolors.ENDC)
 			print("    > No leaks available.")
+			print()
 			continue
 
 		if(args.full):
@@ -170,7 +176,6 @@ for domain in domains:
 		print(bcolors.OK + "[✓]" + bcolors.ENDC + " Finished leak check on " + str(domain))
 		print("    > " + str(len(unique_users)) + " unique user emails found!")
 		print("    > " + str(len(unique_passwords)) + " unique passwords found!")
-		print()
 
 	except Exception as e:
 		print(e)
