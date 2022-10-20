@@ -1,7 +1,9 @@
 # DehashedDumper
 Python3 script to dump breach data from Dehashed.
 
-Either takes a single domain name or a file with newline separated domain names. Queries breach data for each domain on dehashed.com and outputs unique usernames and leaks into outfiles. If you supply the `--full` command, all breach data from Dehashed's API are stored in an additional outfile.
+Either takes a single domain name or a file with newline separated domain names. Queries breach data for each domain on dehashed.com and outputs unique usernames and leaks into outfiles. 
+
+If you supply the `--full` command, all breach data from Dehashed's API are stored in a separate CSV outfile. The CSV will be extended with private information about breaches, e.g. a description, the breach date as well as the amount and type of leaked data.
 
 ## Usage
 ````
@@ -18,7 +20,7 @@ options:
 
 ## Example Output
 ````
-$ python3 dehasheddumper.py --domains domains.txt
+$ python3 dehasheddumper.py --domains domains.txt --full
 
 ▓█████▄ ▓█████▄  █    ██  ███▄ ▄███▓ ██▓███  ▓█████  ██▀███  
 ▒██▀ ██▌▒██▀ ██▌ ██  ▓██▒▓██▒▀█▀ ██▒▓██░  ██▒▓█   ▀ ▓██ ▒ ██▒
@@ -39,7 +41,8 @@ $ python3 dehasheddumper.py --domains domains.txt
     
     
 $ ls -la  
-.rw-r--r-- anon anon 148 B  Thu Oct 20 18:13:04 2022   20102022_DD_apple.com_passwords.lst 
-.rw-r--r-- anon anon 122 B  Thu Oct 20 18:13:04 2022   20102022_DD_apple.com_users.lst     
+.rw-r--r-- anon anon 148 B  Thu Oct 20 18:13:04 2022   20102022-1337_DD_apple.com_passwords.lst 
+.rw-r--r-- anon anon 122 B  Thu Oct 20 18:13:04 2022   20102022-1337_DD_apple.com_users.lst    
+.rw-r--r-- anon anon 8,2 KB  Thu Oct 20 18:13:04 2022   20102022-1337_DD_apple.com_fulldata.lst
 .rw-r--r-- anon anon 4.7 KB Thu Oct 20 18:13:44 2022   dehasheddumper.py
 ````
