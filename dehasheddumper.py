@@ -138,7 +138,7 @@ for domain in domains:
 						# if not from Cit0day, then loop thorugh the breach dataset
 						for leakentry in breach_data:
 							# check whether the breach name from Dehashed matches one from our private breach database - case insensitive
-							if leakentry['name'].casefold() == breach.casefold():
+							if str(leakentry['name']).casefold() == str(breach).casefold():
 								breach_desc = leakentry['description']
 								breach_date = leakentry['date']
 								breach_leakcount = leakentry['leakcount']
