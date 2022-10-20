@@ -64,13 +64,18 @@ for domain in domains:
 	}
 
 	try:
+
+		# if API does not respond with status code 200
+		print("[i] Verifying Dehashed API credentials. Please wait...")
 		response = requests.get(url, params=params, headers=headers, auth=(dehashed_user, dehashed_apikey))
 		data = response.json()
 
-		# if API does not respond with status code 200
 		if (response.status_code != 200):
 			print("[" + str(response.status_code) + "] Dehashed down or invalid API credentials.")
 			exit()
+		else:
+			print("[i] Successful API authentication. Let's go looting...")
+			print()
 
 		print("[i] Performing leak check on " + str(domain))
 
