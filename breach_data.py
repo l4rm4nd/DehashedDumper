@@ -378,6 +378,13 @@ breach_data = [
     "leaktypes": "Email Addresses, Passwords, Usernames"
   },
   {
+    "name": "weheartit",
+    "description": "N/A",
+    "date": "2013-11-03",
+    "leakcount": 8604982,
+    "leaktypes": "Email Addresses, Passwords, Usernames"
+  },  
+  {
     "name": "PSX-Scene",
     "description": "In approximately February 2015, the sony playstation forum known as PSX-Scene was hacked and more than 340k accounts were exposed. The vBulletin forum included IP addresses and passwords stored as salted hashes using a weak implementation enabling many to be rapidly cracked.",
     "date": "2015-02-01",
@@ -4150,6 +4157,13 @@ breach_data = [
     "leakcount": 432552,
     "leaktypes": "Email addresses, IP addresses, Passwords, Usernames"
   },
+  {
+    "name": "Xbox-Scene.com",
+    "description": "In approximately February 2015, the xbox forum known as Xbox-Scene was hacked and more than 432k accounts were exposed. The IP.Board forum included IP addresses and passwords stored as salted hashes using a weak implementation enabling many to be rapidly cracked.",
+    "date": "2015-02-01",
+    "leakcount": 432552,
+    "leaktypes": "Email addresses, IP addresses, Passwords, Usernames"
+  },  
   {
     "name": "AnimeSue.com",
     "description": "N/A",
