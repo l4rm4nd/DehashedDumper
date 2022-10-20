@@ -252,6 +252,13 @@ breach_data = [
     "leaktypes": "Email Addresses, IP Addresses, Passwords, Usernames"
   },
   {
+    "name": "duelingnetwork",
+    "description": "N/A",
+    "date": "2017-03-29",
+    "leakcount": 6477281,
+    "leaktypes": "Email Addresses, IP Addresses, Passwords, Usernames"
+  },  
+  {
     "name": "g-shockzone.com",
     "description": "N/A",
     "date": "",
@@ -994,12 +1001,26 @@ breach_data = [
     "leaktypes": "N/A"
   },
   {
+    "name": "Evite.com",
+    "description": "In 2019, it was disclosed that Evite — the online invitation platform that has sent more than a few birthday and pizza party invitations over the years — suffered a data breach that included over 100 million accounts.",
+    "date": "2009-02-22",
+    "leakcount": 100985047,
+    "leaktypes": "Names, Usernames, Email addresses, Passwords, Birthdates, Phone numbers"
+  },  
+  {
     "name": "Elance",
     "description": "Sometime in 2009, staffing platform Elance suffered a data breach that impacted 1.3 million accounts. Appearing online 8 years later, the data contained usernames, email addresses, phone numbers and SHA1 hashes of passwords, amongst other personal data.",
     "date": "2009-01-01",
     "leakcount": 1291178,
     "leaktypes": "Email addresses, Employers, Geographic locations, Passwords, Phone numbers, Usernames"
   },
+  {
+    "name": "Elance.com",
+    "description": "Sometime in 2009, staffing platform Elance suffered a data breach that impacted 1.3 million accounts. Appearing online 8 years later, the data contained usernames, email addresses, phone numbers and SHA1 hashes of passwords, amongst other personal data.",
+    "date": "2009-01-01",
+    "leakcount": 1291178,
+    "leaktypes": "Email addresses, Employers, Geographic locations, Passwords, Phone numbers, Usernames"
+  },  
   {
     "name": "forum.cabaleu.playthisgame.com",
     "description": "N/A",
@@ -1336,6 +1357,13 @@ breach_data = [
     "leakcount": 5888677,
     "leaktypes": "N/A"
   },
+  {
+    "name": "Appen.com",
+    "description": "N/A",
+    "date": "",
+    "leakcount": 5888677,
+    "leaktypes": "N/A"
+  },  
   {
     "name": "s475140492.online.de",
     "description": "In January 2019, a large collection named 'Collection #1' of credential stuffing lists (combinations of email addresses and passwords used to hijack accounts on other services) was discovered being distributed on a popular hacking forum. The data contained almost 2.7 billion records including 773 million unique email addresses alongside passwords those addresses had used on other breached services.",
@@ -3297,6 +3325,13 @@ breach_data = [
     "leaktypes": "Dates of birth, Email addresses, Genders, Names, Partial credit card data, Passwords, Phone numbers, Physical addresses, Social media profiles"
   },
   {
+    "name": "eatstreet",
+    "description": "N/A",
+    "date": "2019-05-03",
+    "leakcount": 9990263,
+    "leaktypes": "Dates of birth, Email addresses, Genders, Names, Partial credit card data, Passwords, Phone numbers, Physical addresses, Social media profiles"
+  },  
+  {
     "name": "d-gem.de",
     "description": "In January 2019, a large collection named 'Collection #1' of credential stuffing lists (combinations of email addresses and passwords used to hijack accounts on other services) was discovered being distributed on a popular hacking forum. The data contained almost 2.7 billion records including 773 million unique email addresses alongside passwords those addresses had used on other breached services.",
     "date": "2019-01-07",
@@ -4025,6 +4060,13 @@ breach_data = [
     "leaktypes": "Email addresses, IP addresses, Passwords, Usernames"
   },
   {
+    "name": "CrackingForum.com",
+    "description": "In approximately mid-2016, the cracking community forum known as CrackingForum suffered a data breach. The vBulletin based forum exposed 660k email and IP addresses, usernames and salted MD5 hashes.",
+    "date": "2016-07-01",
+    "leakcount": 660305,
+    "leaktypes": "Email addresses, IP addresses, Passwords, Usernames"
+  },  
+  {
     "name": "Aipai.com",
     "description": "In September 2016, data allegedly obtained from the chinese gaming website known as Aipai.com and containing 6.5M accounts was leaked online. Whilst there is evidence that the data is legitimate, due to the difficulty of emphatically verifying the Chinese breach it has been flagged as 'unverified'. The data in the breach contains email addresses and MD5 password hashes.",
     "date": "2016-09-17",
@@ -4388,6 +4430,13 @@ breach_data = [
     "leakcount": 17560326,
     "leaktypes": "N/A"
   },
+  {
+    "name": "ClearVoiceSurveys.com",
+    "description": "N/A",
+    "date": "",
+    "leakcount": 17560326,
+    "leaktypes": "N/A"
+  },  
   {
     "name": "forum.learncima.com",
     "description": "N/A",
@@ -5074,6 +5123,13 @@ breach_data = [
     "leakcount": 444767,
     "leaktypes": "Email addresses, IP addresses, Passwords, Usernames"
   },
+  {
+    "name": "CheapAssGamer",
+    "description": "In approximately mid-2015, the forum for CheapAssGamer.com suffered a data breach. The database from the IP.Board based forum contained 445k accounts including usernames, email and IP addresses and salted MD5 password hashes.",
+    "date": "2015-07-01",
+    "leakcount": 444767,
+    "leaktypes": "Email addresses, IP addresses, Passwords, Usernames"
+  },  
   {
     "name": "R2 (2017 forum breach)",
     "description": "In early 2017, the forum for the gaming website R2 Games was hacked. R2 had previously appeared on DeHashed in 2015 after a prior incident. This one exposed over 1 million unique user accounts and corresponding MD5 password hashes with no salt.",
@@ -6740,6 +6796,13 @@ breach_data = [
     "leakcount": 8388894,
     "leaktypes": "Usernames, Emails, Passwords (phpass, MD5(Wordpress), MD5(phpBB3)), IP Addresses, Game & Forum Activity, & Payment Information"
   },
+  {
+    "name": "BlankMediaGames",
+    "description": "On December 22nd, 2018, the popular RP game by BlankMediaGames 'Town Of Salem' Suffered a major data breach for the first time. The breach included Usernames, IP info, Passwords, Emails & More.",
+    "date": "2018-12-23",
+    "leakcount": 8388894,
+    "leaktypes": "Usernames, Emails, Passwords (phpass, MD5(Wordpress), MD5(phpBB3)), IP Addresses, Game & Forum Activity, & Payment Information"
+  },  
   {
     "name": "IranUFC.com",
     "description": "N/A",
@@ -9415,6 +9478,13 @@ breach_data = [
     "leaktypes": "Email addresses, IP addresses, Passwords, Usernames"
   },
   {
+    "name": "cs_puchatek_pl",
+    "description": "N/A",
+    "date": "2012-01-01",
+    "leakcount": 544521,
+    "leaktypes": "Email addresses, IP addresses, Passwords, Usernames"
+  },  
+  {
     "name": "RetailLeads",
     "description": "N/A",
     "date": "2019-01-01",
@@ -9989,6 +10059,13 @@ breach_data = [
     "leaktypes": "Email addresses, Passwords"
   },
   {
+    "name": "Armor Games",
+    "description": "In 2014, a file allegedly containing data hacked from Coupon Mom was created and included 11 million email addresses and plain text passwords. On further investigation, the file was also found to contain data indicating it had been sourced from Armor Games. Subsequent verification with DeHashed subscribers confirmed the passwords had previously been used and many subscribers had used either Coupon Mom or Armor Games in the past. On disclosure to both organisations, each found that the data did not represent their entire customer base and possibly includes records from other sources with common subscribers. The breach has subsequently been flagged as 'unverified' as the source cannot be emphatically proven.",
+    "date": "2014-02-08",
+    "leakcount": 11010525,
+    "leaktypes": "Email addresses, Passwords"
+  },  
+  {
     "name": "morbach.de",
     "description": "In January 2019, a large collection named 'Collection #1' of credential stuffing lists (combinations of email addresses and passwords used to hijack accounts on other services) was discovered being distributed on a popular hacking forum. The data contained almost 2.7 billion records including 773 million unique email addresses alongside passwords those addresses had used on other breached services.",
     "date": "2019-01-07",
@@ -10359,6 +10436,13 @@ breach_data = [
     "leakcount": 11032596,
     "leaktypes": "Email Addresses,Passwords"
   },
+  {
+    "name": "CouponMom.com(2014)",
+    "description": "N/A",
+    "date": "2014-02-08",
+    "leakcount": 11032596,
+    "leaktypes": "Email Addresses,Passwords"
+  },  
   {
     "name": "contest.co.nz",
     "description": "N/A",
