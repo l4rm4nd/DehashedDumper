@@ -2,3 +2,5 @@ requests
 json
 argparse
 datetime
+parseaddr
+csv
