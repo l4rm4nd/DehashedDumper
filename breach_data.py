@@ -3836,6 +3836,13 @@ breach_data = [
     "leaktypes": "Email addresses, Passwords, Usernames"
   },
   {
+    "name": "uuu9_com",
+    "description": "In September 2016, data was allegedly obtained from the chinese website known as uuu9.com and contained 7.5M accounts. Whilst there is evidence that the data is legitimate, due to the difficulty of emphatically verifying the Chinese breach it has been flagged as 'unverified'. The data in the breach contains email addresses and user names.",
+    "date": "2016-09-06",
+    "leakcount": 7485802,
+    "leaktypes": "Email addresses, Passwords, Usernames"
+  },  
+  {
     "name": "swrpgnetwork.com",
     "description": "N/A",
     "date": "2019-01-01",
