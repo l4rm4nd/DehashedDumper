@@ -63,10 +63,18 @@ for domain in domains:
 
 	try:
 		response = requests.get(url, params=params, headers=headers, auth=(dehashed_user, dehashed_apikey))
-		
+		data = response.json()
+
+		# if API does not respond with status code 200
 		if (response.status_code != 200):
 			print("[" + str(response.status_code) + "] Dehashed down or invalid API credentials.")
 			exit()
+
+		# if there are no leaks available
+		if (data['total'] == 0):
+			print("[i] Finished leak check on " + str(domain))
+			print("    > No leaks available.")
+			continue
 
 		if(args.full):
 			alldata_file = open(str(date) + "_DD_" + str(domain) + "_fulldata.csv", "a")
@@ -78,8 +86,7 @@ for domain in domains:
 		user_file = open(str(date) + "_DD_" + str(domain) + "_users.lst", "a")
 		# file containing leaked user passwords
 		password_file = open(str(date) + "_DD_" + str(domain) + "_passwords.lst", "a")
-		# convert response to json
-		data = response.json()
+
 		# list to store user emails
 		users = []
 		# list to store user passwords
