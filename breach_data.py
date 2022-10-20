@@ -2163,6 +2163,13 @@ breach_data = [
     "leaktypes": "N/A"
   },
   {
+    "name": "SubaGames",
+    "description": "N/A",
+    "date": "",
+    "leakcount": 6702696,
+    "leaktypes": "N/A"
+  },  
+  {
     "name": "glass-hobby-design.de",
     "description": "In January 2019, a large collection named 'Collection #1' of credential stuffing lists (combinations of email addresses and passwords used to hijack accounts on other services) was discovered being distributed on a popular hacking forum. The data contained almost 2.7 billion records including 773 million unique email addresses alongside passwords those addresses had used on other breached services.",
     "date": "2019-01-07",
@@ -2610,6 +2617,13 @@ breach_data = [
     "leakcount": 22086747,
     "leaktypes": "Email addresses, Genders, IP addresses, Names, Passwords"
   },
+  {
+    "name": "promo_com",
+    "description": "N/A",
+    "date": "2020-06-22",
+    "leakcount": 22086747,
+    "leaktypes": "Email addresses, Genders, IP addresses, Names, Passwords"
+  },  
   {
     "name": "Quantum Booter",
     "description": "In March 2014, the booter service Quantum Booter (also referred to as Quantum Stresser) suffered a breach which lead to the disclosure of their internal database. The leaked data included private discussions relating to malicious activity Quantum Booter users were performing against online adversaries, including the IP addresses of those using the service to mount DDoS attacks.",
@@ -3814,6 +3828,13 @@ breach_data = [
     "leakcount": 4197427,
     "leaktypes": "Email addresses, Names, Partial credit card data, Passwords, Phone numbers, Profile photos"
   },
+  {
+    "name": "swvl",
+    "description": "N/A",
+    "date": "2020-06-23",
+    "leakcount": 4197427,
+    "leaktypes": "Email addresses, Names, Partial credit card data, Passwords, Phone numbers, Profile photos"
+  },  
   {
     "name": "shop.santool.de",
     "description": "In January 2019, a large collection named 'Collection #1' of credential stuffing lists (combinations of email addresses and passwords used to hijack accounts on other services) was discovered being distributed on a popular hacking forum. The data contained almost 2.7 billion records including 773 million unique email addresses alongside passwords those addresses had used on other breached services.",
@@ -5571,6 +5592,13 @@ breach_data = [
     "leakcount": 3206383,
     "leaktypes": "Website Activity, Usernames, Email Addresses, Passwords"
   },
+  {
+    "name": "swordfantasy",
+    "description": "N/A",
+    "date": "2017-01-01",
+    "leakcount": 3206383,
+    "leaktypes": "Website Activity, Usernames, Email Addresses, Passwords"
+  },  
   {
     "name": "forum.bieszczady.info.pl",
     "description": "N/A",
@@ -8174,6 +8202,13 @@ breach_data = [
     "date": "2020-11-01",
     "leakcount": 1369555,
     "leaktypes": "Email Addresses, Passwords, Password hashes"
+  }, 
+  {
+    "name": "roseindia.net_cleaned",
+    "description": "N/A",
+    "date": "2020-11-01",
+    "leakcount": 1369555,
+    "leaktypes": "Email Addresses, Passwords, Password hashes"
   },  
   {
     "name": "highcountry4wheelers.com",
@@ -9652,6 +9687,13 @@ breach_data = [
     "leakcount": 2445577,
     "leaktypes": "Email addresses, IP addresses, Names, Phone numbers, Physical addresses"
   },
+  {
+    "name": "vtightgel_ne",
+    "description": "N/A",
+    "date": "2016-02-01",
+    "leakcount": 2445577,
+    "leaktypes": "Email addresses, IP addresses, Names, Phone numbers, Physical addresses"
+  },  
   {
     "name": "rausvonzuhaus.de",
     "description": "In January 2019, a large collection named 'Collection #1' of credential stuffing lists (combinations of email addresses and passwords used to hijack accounts on other services) was discovered being distributed on a popular hacking forum. The data contained almost 2.7 billion records including 773 million unique email addresses alongside passwords those addresses had used on other breached services.",
