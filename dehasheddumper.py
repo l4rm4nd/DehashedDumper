@@ -79,7 +79,7 @@ for domain in domains:
 		data = response.json()
 
 		if (response.status_code != 200):
-			print("[" + str(response.status_code) + "] Dehashed down or invalid API credentials.")
+			print(bcolors.FAIL + "[x]" + bcolors.ENDC + " Status " + str(response.status_code) + " - Dehashed down or invalid API credentials.")
 			exit()
 		else:
 			print(bcolors.OK + "[✓]" + bcolors.ENDC + " Successful API authentication. Let's go looting..." + bcolors.ENDC)
