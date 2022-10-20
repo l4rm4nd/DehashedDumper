@@ -15,3 +15,31 @@ options:
   --api-token <token>     Dehashed API token
   --full                  Dump all data from Dehashed into CSV
 ````
+
+## Example Output
+````
+$ python3 dehasheddumper.py --domains domains.txt
+
+▓█████▄ ▓█████▄  █    ██  ███▄ ▄███▓ ██▓███  ▓█████  ██▀███  
+▒██▀ ██▌▒██▀ ██▌ ██  ▓██▒▓██▒▀█▀ ██▒▓██░  ██▒▓█   ▀ ▓██ ▒ ██▒
+░██   █▌░██   █▌▓██  ▒██░▓██    ▓██░▓██░ ██▓▒▒███   ▓██ ░▄█ ▒
+░▓█▄   ▌░▓█▄   ▌▓▓█  ░██░▒██    ▒██ ▒██▄█▓▒ ▒▒▓█  ▄ ▒██▀▀█▄  
+░▒████▓ ░▒████▓ ▒▒█████▓ ▒██▒   ░██▒▒██▒ ░  ░░▒████▒░██▓ ▒██▒
+ ▒▒▓  ▒  ▒▒▓  ▒ ░▒▓▒ ▒ ▒ ░ ▒░   ░  ░▒▓▒░ ░  ░░░ ▒░ ░░ ▒▓ ░▒▓░
+ ░ ▒  ▒  ░ ▒  ▒ ░░▒░ ░ ░ ░  ░      ░░▒ ░      ░ ░  ░  ░▒ ░ ▒░
+ ░ ░  ░  ░ ░  ░  ░░░ ░ ░ ░      ░   ░░          ░     ░░   ░ 
+   ░       ░       ░            ░               ░  ░   ░     
+ ░       ░                                         ░ by LRVT                  
+
+[i] Performing leak check on apple.com
+[i] Finished leak check on apple.com
+    > 42 unique user emails found!
+    > 1000 unique passwords found!
+    
+    
+    
+$ ls -la  
+.rw-r--r-- anon anon 148 B  Thu Oct 20 18:13:04 2022   20102022_DD_apple.com_passwords.lst 
+.rw-r--r-- anon anon 122 B  Thu Oct 20 18:13:04 2022   20102022_DD_apple.com_users.lst     
+.rw-r--r-- anon anon 4.7 KB Thu Oct 20 18:13:44 2022   dehasheddumper.py
+````
