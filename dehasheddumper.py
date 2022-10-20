@@ -112,8 +112,8 @@ for domain in domains:
 		user_file.close()
 		password_file.close()
 		print("[i] Finished leak check on " + str(domain))
-		print("    > " + str(len(unique_users)) + " user mail found!")
-		print("    > " + str(len(unique_passwords)) + " passwords found!")
+		print("    > " + str(len(unique_users)) + " unique user emails found!")
+		print("    > " + str(len(unique_passwords)) + " unique passwords found!")
 		print()
 
 	except Exception as e:
