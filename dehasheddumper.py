@@ -99,10 +99,10 @@ for domain in domains:
 				alldata_file.write(identifier+","+email+","+username+","+password+","+hashed_password+","+name+","+vin+","+address+","+ip_address+","+phone+","+breach+"\n")
 				alldata_file.close()
 
-		# remove duplicates from lists
-		unique_users = list(dict.fromkeys(users))
-		unique_passwords = list(dict.fromkeys(passwords))
-
+		# remove duplicates and none entries from lists
+		unique_users = list(filter(None,list(dict.fromkeys(users))))
+		unique_passwords = list(filter(None,list(dict.fromkeys(passwords))))
+		
 		for usr in unique_users:
 			user_file.write(str(usr) + "\n")
 
