@@ -742,6 +742,13 @@ breach_data = [
     "leaktypes": "Email addresses, Geographic locations, Names, Passwords, Phone numbers, Spoken languages, Usernames"
   },
   {
+    "name": "Dubsmash",
+    "description": "In December 2018, the video messaging service Dubsmash suffered a data breach. The incident exposed 162 million unique email addresses alongside usernames and PBKDF2 password hashes. In 2019, the data appeared listed for sale on a dark web marketplace (along with several other large breaches) and subsequently began circulating more broadly.",
+    "date": "2018-12-01",
+    "leakcount": 161549213,
+    "leaktypes": "Email addresses, Geographic locations, Names, Passwords, Phone numbers, Spoken languages, Usernames"
+  },  
+  {
     "name": "ww.w.f-tor.de",
     "description": "In January 2019, a large collection named 'Collection #1' of credential stuffing lists (combinations of email addresses and passwords used to hijack accounts on other services) was discovered being distributed on a popular hacking forum. The data contained almost 2.7 billion records including 773 million unique email addresses alongside passwords those addresses had used on other breached services.",
     "date": "2019-01-07",
@@ -5236,6 +5243,13 @@ breach_data = [
     "leaktypes": "Email addresses, IP addresses, Names, Passwords"
   },
   {
+    "name": "000Webhost",
+    "description": "In approximately March 2015, the free web hosting provider 000webhost suffered a major data breach that exposed almost 15 million customer records. The data was sold and traded before 000webhost was alerted in October. The breach included names, email addresses and plain text passwords.",
+    "date": "2015-05-01",
+    "leakcount": 14936670,
+    "leaktypes": "Email addresses, IP addresses, Names, Passwords"
+  },  
+  {
     "name": "ccfreunde.de",
     "description": "In January 2019, a large collection named 'Collection #1' of credential stuffing lists (combinations of email addresses and passwords used to hijack accounts on other services) was discovered being distributed on a popular hacking forum. The data contained almost 2.7 billion records including 773 million unique email addresses alongside passwords those addresses had used on other breached services.",
     "date": "2019-01-07",
@@ -6265,6 +6279,13 @@ breach_data = [
     "leaktypes": "Email addresses, Passwords"
   },
   {
+    "name": "Tumblr",
+    "description": "In early 2013, tumblr suffered a data breach which resulted in the exposure of over 65 million accounts. The data was later put up for sale on a dark market website and included email addresses and passwords stored as salted SHA1 hashes.",
+    "date": "2013-02-28",
+    "leakcount": 65469298,
+    "leaktypes": "Email addresses, Passwords"
+  },  
+  {
     "name": "sportsfreaksonline.com",
     "description": "N/A",
     "date": "",
@@ -6482,6 +6503,13 @@ breach_data = [
     "leaktypes": "Email addresses, Names, Passwords, Phone numbers"
   },
   {
+    "name": "VK.COM",
+    "description": "In approximately 2012, the russian social media site known as VK was hacked and almost 100 million accounts were exposed. The data emerged in June 2016 where it was being sold via a dark market website and included names, phone numbers email addresses and plain text passwords.",
+    "date": "2012-01-01",
+    "leakcount": 93338602,
+    "leaktypes": "Email addresses, Names, Passwords, Phone numbers"
+  },  
+  {
     "name": "bulgaria-shop.de",
     "description": "In January 2019, a large collection named 'Collection #1' of credential stuffing lists (combinations of email addresses and passwords used to hijack accounts on other services) was discovered being distributed on a popular hacking forum. The data contained almost 2.7 billion records including 773 million unique email addresses alongside passwords those addresses had used on other breached services.",
     "date": "2019-01-07",
@@ -6579,6 +6607,13 @@ breach_data = [
     "leakcount": 213859787,
     "leaktypes": "Address book contacts, Apps installed on devices, Cellular network names, Dates of birth, Device information, Email addresses, Genders, Geographic locations, IMEI numbers, IMSI numbers, IP addresses, Names, Phone numbers, Profile photos, Social media profiles"
   },
+  {
+    "name": "Zynga.com",
+    "description": "In September 2019, game developer Zynga (the creator of Words with Friends) suffered a data breach. The incident exposed 173M unique email addresses alongside usernames and passwords stored as salted SHA-1 hashes.",
+    "date": "2019-09-01",
+    "leakcount": 213859787,
+    "leaktypes": "Address book contacts, Apps installed on devices, Cellular network names, Dates of birth, Device information, Email addresses, Genders, Geographic locations, IMEI numbers, IMSI numbers, IP addresses, Names, Phone numbers, Profile photos, Social media profiles"
+  },  
   {
     "name": "Qatar National Bank",
     "description": "In July 2015, the qatar national bank suffered a data breach which exposed 15k documents totalling 1.4GB and detailing more than 100k accounts with passwords and PINs. The incident was made public some 9 months later in April 2016 when the documents appeared publicly on a file sharing site. Analysis of the breached data suggests the attack began by exploiting a SQL injection flaw in the banks website.",
@@ -6740,6 +6775,13 @@ breach_data = [
     "leakcount": 6150855,
     "leaktypes": "Email Addresses, Names, Phone numbers, Physical Addresses"
   },
+  {
+    "name": "ticketfly",
+    "description": "N/A",
+    "date": "2018-05-31",
+    "leakcount": 6150855,
+    "leaktypes": "Email Addresses, Names, Phone numbers, Physical Addresses"
+  },  
   {
     "name": "B2B USA Businesses",
     "description": "In mid-2017, a spam list of over 105 million individuals in corporate America was discovered online. Referred to as 'B2B USA Businesses', the list categorised email addresses by employer, providing information on individuals job titles plus their work phone numbers and physical addresses.",
@@ -7293,6 +7335,13 @@ breach_data = [
     "leakcount": 85176234,
     "leaktypes": "Email addresses, Passwords, Usernames"
   },
+  {
+    "name": "DailyMotion.com",
+    "description": "In October 2016, the video sharing platform Dailymotion suffered a data breach. The attack led to the exposure of more than 85 million user accounts and included email addresses, usernames and bcrypt hashes of passwords.",
+    "date": "2016-10-20",
+    "leakcount": 85176234,
+    "leaktypes": "Email addresses, Passwords, Usernames"
+  },  
   {
     "name": "dlrk2012.dglr.de",
     "description": "In January 2019, a large collection named 'Collection #1' of credential stuffing lists (combinations of email addresses and passwords used to hijack accounts on other services) was discovered being distributed on a popular hacking forum. The data contained almost 2.7 billion records including 773 million unique email addresses alongside passwords those addresses had used on other breached services.",
@@ -9652,6 +9701,13 @@ breach_data = [
     "leakcount": 28243872,
     "leaktypes": "email address, bcrypted-hashed password, country, country code, Facebook authentication token, Facebook profile picture, name, gender, and IP address."
   },
+  {
+    "name": "8fit",
+    "description": "1.9GB of data taken July 2018. Each account record contains an email address, bcrypted-hashed password, country, country code, Facebook authentication token, Facebook profile picture, name, gender, and IP address. This security breach has not been previously publicly disclosed. Germany-headquartered 8fit offers customized workout and diet plans for healthy fitness types.",
+    "date": "2018-07-08",
+    "leakcount": 28243872,
+    "leaktypes": "email address, bcrypted-hashed password, country, country code, Facebook authentication token, Facebook profile picture, name, gender, and IP address."
+  },  
   {
     "name": "RankWatch",
     "description": "In approximately November 2016, the search engine optimisation management company RankWatch exposed a Mongo DB with no password publicly whereupon their data was exfiltrated and posted to an online forum. The data contained 7.4 million unique email addresses along with names, employers, phone numbers and job titles in a table called 'us_emails'. When contacted and advised of the incident, RankWatch would not reveal the purpose of the data, where it had been acquired from and whether the data owners had consented to its collection. The forum which originally posted the data explained it as being 'in the same vein as the modbsolutions leak', a large list of corporate data allegedly used for spam purposes.",
