@@ -76,28 +76,29 @@ for domain in domains:
 		passwords = [] 
 
 		for leak in data['entries']:
-			identifier=str(leak['id'])
-			email=str(leak['email'])
-			username=str(leak['username'])
-			password=str(leak['password'])
-			hashed_password=str(leak['hashed_password'])
-			name=str(leak['name'])
-			vin=str(leak['vin'])
-			address=str(leak['address'])
-			ip_address=str(leak['ip_address'])
-			phone=str(leak['phone'])
-			breach=str(leak['database_name'])
+			if ("@"+domain in leak['email']):
+				identifier=str(leak['id'])
+				email=str(leak['email'])
+				username=str(leak['username'])
+				password=str(leak['password'])
+				hashed_password=str(leak['hashed_password'])
+				name=str(leak['name'])
+				vin=str(leak['vin'])
+				address=str(leak['address'])
+				ip_address=str(leak['ip_address'])
+				phone=str(leak['phone'])
+				breach=str(leak['database_name'])
 
-			# add user email to list
-			users.append(str(email))
-			# add leaked pw to list
-			passwords.append(str(password))
+				# add user email to list
+				users.append(str(email))
+				# add leaked pw to list
+				passwords.append(str(password))
 
-			# dump all leak data into a csv file
-			if(args.full):
-				alldata_file = open(str(date) + "_DD_" + str(domain) + "_fulldata.csv", "a")
-				alldata_file.write(identifier+","+email+","+username+","+password+","+hashed_password+","+name+","+vin+","+address+","+ip_address+","+phone+","+breach+"\n")
-				alldata_file.close()
+				# dump all leak data into a csv file
+				if(args.full):
+					alldata_file = open(str(date) + "_DD_" + str(domain) + "_fulldata.csv", "a")
+					alldata_file.write(identifier+","+email+","+username+","+password+","+hashed_password+","+name+","+vin+","+address+","+ip_address+","+phone+","+breach+"\n")
+					alldata_file.close()
 
 		# remove duplicates and none entries from lists
 		unique_users = list(filter(None,list(dict.fromkeys(users))))
