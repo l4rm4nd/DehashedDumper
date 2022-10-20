@@ -67,7 +67,12 @@ for domain in domains:
 		if (response.status_code != 200):
 			print("[" + str(response.status_code) + "] Dehashed down or invalid API credentials.")
 			exit()
-		
+
+		if(args.full):
+			alldata_file = open(str(date) + "_DD_" + str(domain) + "_fulldata.csv", "a")
+			alldata_file.write("Leak ID" + ","+"Email" + "," + "Username" + "," + "Password" + "," + "Password_Hash" + "," + "Name" + "," + "VIN" + "," + "Address" + "," + "IP Address" + "," + "Phone" + "," + "Breach" + "\n")
+			alldata_file.close()
+			
 		print("[i] Performing leak check on " + str(domain))
 		# file containing user email addresses
 		user_file = open(str(date) + "_DD_" + str(domain) + "_users.lst", "a")
@@ -102,7 +107,7 @@ for domain in domains:
 				# dump all leak data into a csv file
 				if(args.full):
 					alldata_file = open(str(date) + "_DD_" + str(domain) + "_fulldata.csv", "a")
-					alldata_file.write(identifier+","+email+","+username+","+password+","+hashed_password+","+name+","+vin+","+address+","+ip_address+","+phone+","+breach+"\n")
+					alldata_file.write(identifier + "," + email + "," + username + "," + password + "," + hashed_password + "," + name + "," + vin + "," + address + "," + ip_address + "," + phone + "," + breach + "\n")
 					alldata_file.close()
 
 		# remove duplicates and none entries from lists
