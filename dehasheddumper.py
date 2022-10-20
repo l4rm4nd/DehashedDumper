@@ -1,6 +1,7 @@
 import requests
 import json
 import argparse
+import csv
 from email.utils import parseaddr
 from datetime import datetime
 
@@ -79,9 +80,8 @@ for domain in domains:
 			continue
 
 		if(args.full):
-			alldata_file = open(str(date) + "_DD_" + str(domain) + "_fulldata.csv", "a")
-			alldata_file.write("Leak ID" + ","+"Email" + "," + "Username" + "," + "Password" + "," + "Password_Hash" + "," + "Name" + "," + "VIN" + "," + "Address" + "," + "IP Address" + "," + "Phone" + "," + "Breach" + "\n")
-			alldata_file.close()
+			alldata_file = csv.writer(open(str(date) + "_DD_" + str(domain) + "_fulldata.csv", "a"))
+			alldata_file.writerow(["Leak ID", "Email", "Username", "Password", "Password_Hash", "Name", "VIN", "Address", "IP Address", "Phone", "Breach"])
 			
 		# file containing user email addresses
 		user_file = open(str(date) + "_DD_" + str(domain) + "_users.lst", "a")
@@ -114,9 +114,8 @@ for domain in domains:
 
 				# dump all leak data into a csv file
 				if(args.full):
-					alldata_file = open(str(date) + "_DD_" + str(domain) + "_fulldata.csv", "a")
-					alldata_file.write(identifier + "," + email + "," + username + "," + password + "," + hashed_password + "," + name + "," + vin + "," + address + "," + ip_address + "," + phone + "," + breach + "\n")
-					alldata_file.close()
+					alldata_file = csv.writer(open(str(date) + "_DD_" + str(domain) + "_fulldata.csv", "a"))
+					alldata_file.writerow([identifier, email, username, password, hashed_password, name, vin, address, ip_address, phone, breach])
 
 		# remove duplicates and none entries from lists
 		unique_users = list(filter(None,list(dict.fromkeys(users))))
