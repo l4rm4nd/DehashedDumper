@@ -70,6 +70,8 @@ for domain in domains:
 			print("[" + str(response.status_code) + "] Dehashed down or invalid API credentials.")
 			exit()
 
+		print("[i] Performing leak check on " + str(domain))
+
 		# if there are no leaks available
 		if (data['total'] == 0):
 			print("[i] Finished leak check on " + str(domain))
@@ -81,7 +83,6 @@ for domain in domains:
 			alldata_file.write("Leak ID" + ","+"Email" + "," + "Username" + "," + "Password" + "," + "Password_Hash" + "," + "Name" + "," + "VIN" + "," + "Address" + "," + "IP Address" + "," + "Phone" + "," + "Breach" + "\n")
 			alldata_file.close()
 			
-		print("[i] Performing leak check on " + str(domain))
 		# file containing user email addresses
 		user_file = open(str(date) + "_DD_" + str(domain) + "_users.lst", "a")
 		# file containing leaked user passwords
