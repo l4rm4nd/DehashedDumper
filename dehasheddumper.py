@@ -4,6 +4,7 @@ import argparse
 import csv
 from email.utils import parseaddr
 from datetime import datetime
+from breach_data import breach_data
 
 parser = argparse.ArgumentParser("dehasheddumper.py")
 group = parser.add_mutually_exclusive_group(required=True)
@@ -81,7 +82,7 @@ for domain in domains:
 
 		if(args.full):
 			alldata_file = csv.writer(open(str(date) + "_DD_" + str(domain) + "_fulldata.csv", "a"))
-			alldata_file.writerow(["Leak ID", "Email", "Username", "Password", "Password_Hash", "Name", "VIN", "Address", "IP Address", "Phone", "Breach"])
+			alldata_file.writerow(["Leak ID", "Email", "Username", "Password", "Password_Hash", "Name", "VIN", "Address", "IP Address", "Phone", "Breach", "Description", "Date", "Leak Count", "Leak Type"])
 			
 		# file containing user email addresses
 		user_file = open(str(date) + "_DD_" + str(domain) + "_users.lst", "a")
@@ -115,7 +116,29 @@ for domain in domains:
 				# dump all leak data into a csv file
 				if(args.full):
 					alldata_file = csv.writer(open(str(date) + "_DD_" + str(domain) + "_fulldata.csv", "a"))
-					alldata_file.writerow([identifier, email, username, password, hashed_password, name, vin, address, ip_address, phone, breach])
+					breach_desc = ""
+					breach_date = ""
+					breach_leakcount = ""
+					breach_leaktypes = ""
+
+					# if the breach comes from Cit0day
+					if "Cit0day" in breach:
+						# find index of breach with name Cit0day
+						cit0day_index = next((index for (index, d) in enumerate(breach_data) if d["name"] == "Cit0day"), None)
+						breach_desc = breach_data[cit0day_index]['description']
+						breach_date = breach_data[cit0day_index]['date']
+						breach_leakcount = breach_data[cit0day_index]['leakcount']
+						breach_leaktypes = breach_data[cit0day_index]['leaktypes']
+					else:
+						# if not from Cit0day, then loop thorugh the breach dataset
+						for leakentry in breach_data:
+							if leakentry['name'] == breach:
+								breach_desc = leakentry['description']
+								breach_date = leakentry['date']
+								breach_leakcount = leakentry['leakcount']
+								breach_leaktypes = leakentry['leaktypes']
+
+					alldata_file.writerow([identifier, email, username, password, hashed_password, name, vin, address, ip_address, phone, breach, breach_desc, breach_date, breach_leakcount, breach_leaktypes])
 
 		# remove duplicates and none entries from lists
 		unique_users = list(filter(None,list(dict.fromkeys(users))))
