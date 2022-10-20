@@ -4830,6 +4830,20 @@ breach_data = [
     "leaktypes": "Email addresses, IP addresses, Passwords, Usernames, Website activity."
   },
   {
+    "name": "Leet.cc",
+    "description": "In August 2016, the service for creating and running pocket minecraft edition servers known as Leet was reported as having suffered a data breach that impacted 6 million subscribers. The incident reported by Softpedia had allegedly taken place earlier in the year, although the data set sent to DeHashed was dated as recently as early September but contained only 2 million subscribers. The data included usernames, email and IP addresses and SHA512 hashes. A further 3 million accounts were obtained and added to DeHashed several days after the initial data was loaded bringing the total to over 5 million.",
+    "date": "2016-07-10",
+    "leakcount": 5081689,
+    "leaktypes": "Email addresses, IP addresses, Passwords, Usernames, Website activity."
+  },
+  {
+    "name": "LeetCC",
+    "description": "In August 2016, the service for creating and running pocket minecraft edition servers known as Leet was reported as having suffered a data breach that impacted 6 million subscribers. The incident reported by Softpedia had allegedly taken place earlier in the year, although the data set sent to DeHashed was dated as recently as early September but contained only 2 million subscribers. The data included usernames, email and IP addresses and SHA512 hashes. A further 3 million accounts were obtained and added to DeHashed several days after the initial data was loaded bringing the total to over 5 million.",
+    "date": "2016-07-10",
+    "leakcount": 5081689,
+    "leaktypes": "Email addresses, IP addresses, Passwords, Usernames, Website activity."
+  },
+  {
     "name": "Spirol",
     "description": "In February 2014, connecticut based spirol fastening solutions suffered a data breach that exposed over 70,000 customer records. The attack was allegedly mounted by exploiting a SQL injection vulnerability which yielded data from Spirols CRM system ranging from customers names, companies, contact information and over 55,000 unique email addresses.",
     "date": "2014-02-22",
@@ -5992,6 +6006,13 @@ breach_data = [
     "leaktypes": "Email addresses, Passwords, Usernames"
   },
   {
+    "name": "quidd",
+    "description": "N/A",
+    "date": "2019-07-01",
+    "leakcount": 3954417,
+    "leaktypes": "Email addresses, Passwords, Usernames"
+  },  
+  {
     "name": "forums.fitsteps.co.uk",
     "description": "N/A",
     "date": "",
@@ -6194,6 +6215,13 @@ breach_data = [
     "leakcount": 802722,
     "leaktypes": "N/A"
   },
+  {
+    "name": "Gawker.com",
+    "description": "N/A",
+    "date": "",
+    "leakcount": 802722,
+    "leaktypes": "N/A"
+  },  
   {
     "name": "filmmuseum-hamburg.de",
     "description": "In January 2019, a large collection named 'Collection #1' of credential stuffing lists (combinations of email addresses and passwords used to hijack accounts on other services) was discovered being distributed on a popular hacking forum. The data contained almost 2.7 billion records including 773 million unique email addresses alongside passwords those addresses had used on other breached services.",
@@ -8112,6 +8140,20 @@ breach_data = [
     "leakcount": "",
     "leaktypes": "N/A"
   },
+  {
+    "name": "revitcommunity.com - Copy_cleaned",
+    "description": "In August 2017 data from a collection that included Revit Community was found exposed online.",
+    "date": "2017-08-01",
+    "leakcount": "",
+    "leaktypes": "N/A"
+  },
+  {
+    "name": "roseindia.net",
+    "description": "N/A",
+    "date": "2020-11-01",
+    "leakcount": 1369555,
+    "leaktypes": "Email Addresses, Passwords, Password hashes"
+  },  
   {
     "name": "highcountry4wheelers.com",
     "description": "N/A",
