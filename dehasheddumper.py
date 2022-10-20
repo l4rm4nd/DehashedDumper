@@ -16,6 +16,13 @@ parser.add_argument("--full", help="Dump all data from Dehashed into CSV", requi
 
 args = parser.parse_args()
 
+class bcolors:
+    OK = '\033[92m'
+    INFO = '\033[94m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+
 print("""\
 
 ▓█████▄ ▓█████▄  █    ██  ███▄ ▄███▓ ██▓███  ▓█████  ██▀███  
@@ -36,6 +43,7 @@ dehashed_user="<email>"
 dehashed_apikey="<api-token>"
 
 date = datetime.now().strftime("%Y%m%d-%H%M")
+balance = 0
 
 if (args.email):
 	dehashed_user = args.email
@@ -66,7 +74,7 @@ for domain in domains:
 	try:
 
 		# if API does not respond with status code 200
-		print("[i] Verifying Dehashed API credentials. Please wait...")
+		print("[~] Verifying Dehashed API credentials. Please wait...")
 		response = requests.get(url, params=params, headers=headers, auth=(dehashed_user, dehashed_apikey))
 		data = response.json()
 
@@ -74,14 +82,15 @@ for domain in domains:
 			print("[" + str(response.status_code) + "] Dehashed down or invalid API credentials.")
 			exit()
 		else:
-			print("[i] Successful API authentication. Let's go looting...")
+			print(bcolors.OK + "[✓]" + bcolors.ENDC + " Successful API authentication. Let's go looting..." + bcolors.ENDC)
+			balance = data['balance']
 			print()
 
-		print("[i] Performing leak check on " + str(domain))
+		print("[~] Performing leak check on " + str(domain))
 
 		# if there are no leaks available
 		if (data['total'] == 0):
-			print("[i] Finished leak check on " + str(domain))
+			print(bcolors.WARNING + "[✓]" + bcolors.ENDC + " Finished leak check on " + str(domain) + bcolors.ENDC)
 			print("    > No leaks available.")
 			continue
 
@@ -137,8 +146,7 @@ for domain in domains:
 					else:
 						# if not from Cit0day, then loop thorugh the breach dataset
 						for leakentry in breach_data:
-							# check whether the breach name from Dehashed matches one from our private breach database - case insensitive
-							if str(leakentry['name']).casefold() == str(breach).casefold():
+							if leakentry['name'] == breach:
 								breach_desc = leakentry['description']
 								breach_date = leakentry['date']
 								breach_leakcount = leakentry['leakcount']
@@ -159,7 +167,7 @@ for domain in domains:
 		user_file.close()
 		password_file.close()
 		
-		print("[i] Finished leak check on " + str(domain))
+		print(bcolors.OK + "[✓]" + bcolors.ENDC + " Finished leak check on " + str(domain))
 		print("    > " + str(len(unique_users)) + " unique user emails found!")
 		print("    > " + str(len(unique_passwords)) + " unique passwords found!")
 		print()
@@ -167,3 +175,5 @@ for domain in domains:
 	except Exception as e:
 		print(e)
 		continue
+
+print(bcolors.INFO + "[i]" + bcolors.ENDC + " Remaining balance: " + str(balance))
