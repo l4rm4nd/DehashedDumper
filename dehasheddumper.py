@@ -102,7 +102,7 @@ for domain in domains:
 
 		if(args.full):
 			alldata_file = csv.writer(open(str(date) + "_DD_" + str(domain) + "_fulldata.csv", "a"))
-			alldata_file.writerow(["Leak ID", "Email", "Username", "Password", "Password_Hash", "Name", "VIN", "Address", "IP Address", "Phone", "Breach", "Description", "Date", "Leak Count", "Leak Type"])
+			alldata_file.writerow(["Leak ID", "Domain", "Email", "Username", "Password", "Password_Hash", "Name", "VIN", "Address", "IP Address", "Phone", "Breach", "Description", "Date", "Leak Count", "Leak Type"])
 			
 		# file containing user email addresses
 		user_file = open(str(date) + "_DD_" + str(domain) + "_users.lst", "a")
@@ -158,7 +158,7 @@ for domain in domains:
 								breach_leakcount = leakentry['leakcount']
 								breach_leaktypes = leakentry['leaktypes']
 
-					alldata_file.writerow([identifier, email, username, password, hashed_password, name, vin, address, ip_address, phone, breach, breach_desc, breach_date, breach_leakcount, breach_leaktypes])
+					alldata_file.writerow([identifier, domain, email, username, password, hashed_password, name, vin, address, ip_address, phone, breach, breach_desc, breach_date, breach_leakcount, breach_leaktypes])
 
 		# remove duplicates and none entries from lists
 		unique_users = list(filter(None,list(dict.fromkeys(users))))
