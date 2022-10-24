@@ -76,7 +76,6 @@ for domain in domains:
 		# only print API access testing once
 		if checkAPI:
 			print("[~] Verifying Dehashed API credentials. Please wait...")
-			checkAPI = False
 		response = requests.get(url, params=params, headers=headers, auth=(dehashed_user, dehashed_apikey))
 		data = response.json()
 
@@ -88,6 +87,7 @@ for domain in domains:
 			# only print API access testing once
 			if checkAPI:
 				print(bcolors.OK + "[✓]" + bcolors.ENDC + " Successful API authentication. Let's go looting..." + bcolors.ENDC)
+				checkAPI = False
 			balance = data['balance']
 			print()
 
@@ -97,7 +97,6 @@ for domain in domains:
 		if (data['total'] == 0):
 			print(bcolors.WARNING + "[✓]" + bcolors.ENDC + " Finished leak check on " + str(domain) + bcolors.ENDC)
 			print("    > No leaks available.")
-			print()
 			continue
 
 		if(args.full):
@@ -181,4 +180,5 @@ for domain in domains:
 		print(e)
 		continue
 
+print()
 print(bcolors.INFO + "[i]" + bcolors.ENDC + " Remaining balance: " + str(balance))
