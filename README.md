@@ -20,7 +20,7 @@ options:
 
 ## Docker Run Examples
 ````
-docker run --rm -v /tmp:/app/results l4rm4nd/dehasheddumper:latest --domain apple.com --email <email> --api-token <token> --full
+docker run --rm -v ${PWD}:/app/results l4rm4nd/dehasheddumper:latest --domain apple.com --email <email> --api-token <token> --full
 ````
 
 ## Example Output
