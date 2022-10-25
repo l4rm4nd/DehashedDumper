@@ -1,5 +1,4 @@
 requests
-json
 argparse
 datetime
 csv
