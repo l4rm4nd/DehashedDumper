@@ -18,6 +18,11 @@ options:
   --full                  Dump all data from Dehashed into CSV
 ````
 
+## Docker Run Examples
+````
+docker run --rm -v /tmp:/app l4rm4nd/dehasheddumper:latest --domain apple.com --email <email> --api-token <token> --full
+````
+
 ## Example Output
 ````
 $ python3 dehasheddumper.py --domains domains.txt --full
