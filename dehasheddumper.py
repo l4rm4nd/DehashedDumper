@@ -2,6 +2,7 @@ import requests
 import json
 import argparse
 import csv
+import os
 from email.utils import parseaddr
 from datetime import datetime
 from breach_data import breach_data
@@ -44,6 +45,12 @@ dehashed_apikey="<api-token>"
 
 date = datetime.now().strftime("%Y%m%d-%H%M")
 balance = 0
+script_dir = os.path.dirname(__file__)
+try:
+	# create subdir results
+	os.mkdir(os.path.join(script_dir, "results/"))
+except:
+	pass
 checkAPI = True
 
 if (args.email):
@@ -100,13 +107,16 @@ for domain in domains:
 			continue
 
 		if(args.full):
-			alldata_file = csv.writer(open(str(date) + "_DD_" + str(domain) + "_fulldata.csv", "a"))
+			alldata_filename = os.path.join(script_dir, "results/" + str(date) + "_DD_" + str(domain) + "_fulldata.csv")
+			alldata_file = csv.writer(open(alldata_filename, "w"))
 			alldata_file.writerow(["Leak ID", "Domain", "Email", "Username", "Password", "Password_Hash", "Name", "VIN", "Address", "IP Address", "Phone", "Breach", "Description", "Date", "Leak Count", "Leak Type"])
 			
 		# file containing user email addresses
-		user_file = open(str(date) + "_DD_" + str(domain) + "_users.lst", "a")
+		user_file_name = os.path.join(script_dir, "results/" + str(date) + "_DD_" + str(domain) + "_users.lst")
+		user_file = open(user_file_name, "w")
 		# file containing leaked user passwords
-		password_file = open(str(date) + "_DD_" + str(domain) + "_passwords.lst", "a")
+		password_file_name = os.path.join(script_dir, "results/" + str(date) + "_DD_" + str(domain) + "_passwords.lst")
+		password_file = open(password_file_name, "w")
 
 		# list to store user emails
 		users = []
@@ -134,7 +144,8 @@ for domain in domains:
 
 				# dump all leak data into a csv file
 				if(args.full):
-					alldata_file = csv.writer(open(str(date) + "_DD_" + str(domain) + "_fulldata.csv", "a"))
+					alldata_filename = os.path.join(script_dir, "results/" + str(date) + "_DD_" + str(domain) + "_fulldata.csv")
+					alldata_file = csv.writer(open(alldata_filename, "w"))
 					breach_desc = ""
 					breach_date = ""
 					breach_leakcount = ""
