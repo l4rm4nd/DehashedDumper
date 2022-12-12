@@ -145,7 +145,7 @@ for domain in domains:
 				# dump all leak data into a csv file
 				if(args.full):
 					alldata_filename = os.path.join(script_dir, "results/" + str(date) + "_DD_" + str(domain) + "_fulldata.csv")
-					alldata_file = csv.writer(open(alldata_filename, "w"))
+					alldata_file = csv.writer(open(alldata_filename, "a"))
 					breach_desc = ""
 					breach_date = ""
 					breach_leakcount = ""
