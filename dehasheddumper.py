@@ -108,7 +108,7 @@ for domain in domains:
 
 		if(args.full):
 			alldata_filename = os.path.join(script_dir, "results/" + str(date) + "_DD_" + str(domain) + "_fulldata.csv")
-			alldata_file = csv.writer(open(alldata_filename, "w"))
+			alldata_file = csv.writer(open(alldata_filename, "a"))
 			alldata_file.writerow(["Leak ID", "Domain", "Email", "Username", "Password", "Password_Hash", "Name", "VIN", "Address", "IP Address", "Phone", "Breach", "Description", "Date", "Leak Count", "Leak Type"])
 			
 		# file containing user email addresses
