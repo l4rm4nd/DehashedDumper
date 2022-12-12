@@ -162,7 +162,7 @@ for domain in domains:
 					else:
 						# if not from Cit0day, then loop thorugh the breach dataset
 						for leakentry in breach_data:
-							if leakentry['name'] == breach:
+							if (str(leakentry['name']).lower() == str(breach).lower()):
 								breach_desc = leakentry['description']
 								breach_date = leakentry['date']
 								breach_leakcount = leakentry['leakcount']
