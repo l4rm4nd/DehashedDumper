@@ -49,6 +49,9 @@ docker run --rm -v ${PWD}:/app/results l4rm4nd/dehasheddumper:latest --domain ap
 ### 🐍 Example 2 - Native Python
 
 ````
+# install dependencies
+pip install -r requirements.txt
+
 python3 dehasheddumper.py --domain apple.com --email <email> --api-token <token> --full
 ````
 
