@@ -21,9 +21,9 @@ The script either takes a single domain name or a file with newline separated do
 
 ## ✨ Requirements
 
-DehashedDumper talks with the official Dehashed API, which requires authentication. 
+DehashedDumper talks with the official Dehashed API, which requires authentication. Therefore, you must have a valid subscription and enough API tokens on Dehashed. You can retrieve your API key from your [Dehashed profile](https://dehashed.com/profile). Use your email address for the API authentication.
 
-Therefore, you must have a valid subscription and enough API tokens on Dehashed.
+Your authentication credentials are passed via the CLI parameters `--email` and `--api-token`. 
 
 ## 🎓 Usage
 
