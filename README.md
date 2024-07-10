@@ -9,7 +9,7 @@
         <a target="_blank" href="https://github.com/l4rm4nd/DehashedDumper/stargazers"><img src="https://img.shields.io/github/stars/l4rm4nd/DehashedDumper.svg?style=social&label=Star" /></a>
     <a target="_blank" href="https://github.com/l4rm4nd/DehashedDumper/network/members"><img src="https://img.shields.io/github/forks/l4rm4nd/DehashedDumper.svg?style=social&label=Fork" /></a>
     <a target="_blank" href="https://github.com/l4rm4nd/DehashedDumper/watchers"><img src="https://img.shields.io/github/watchers/l4rm4nd/DehashedDumper.svg?style=social&label=Watch" /></a><br>
-    <a target="_blank" href="https://hub.docker.com/repository/docker/l4rm4nd/dehasheddumper/general"><img src="https://badgen.net/badge/icon/l4rm4nd%2Fdehasheddumper:latest?icon=docker&label" /></a><br><p>
+    <a target="_blank" href="https://hub.docker.com/r/l4rm4nd/dehasheddumper"><img src="https://badgen.net/badge/icon/l4rm4nd%2Fdehasheddumper:latest?icon=docker&label" /></a><br><p>
     <a href="https://www.buymeacoffee.com/LRVT" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 </div>
 
