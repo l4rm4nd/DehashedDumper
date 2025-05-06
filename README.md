@@ -15,7 +15,7 @@
 
 ## 💬 Description
 
-DehashedDumper is a Python 3 script that dumps breach data from the [Dehashed Leak API](https://dehashed.com).
+DehashedDumper is a Python 3 script that dumps breach data from the [Dehashed Leak API (v2)](https://dehashed.com).
 
 The script either takes a single domain name or a file with newline separated domain names. It will then query breach data for each target domain and output the results into outfiles. If you supply the `--full` command, all breach data from Dehashed's API is stored in a separate CSV outfile. The CSV will be extended with private information about breaches, e.g. a description, the breach date as well as the amount and type of leaked data.
 
