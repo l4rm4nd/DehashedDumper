@@ -40,156 +40,149 @@ print("""\
 print()
 
 # hardcoded credentials
-dehashed_user="<email>"
-dehashed_apikey="<api-token>"
+dehashed_user = "<email>"
+dehashed_apikey = "<api-token>"
 
 date = datetime.now().strftime("%Y%m%d-%H%M")
 balance = 0
 script_dir = os.path.dirname(__file__)
 try:
-	# create subdir results
-	os.mkdir(os.path.join(script_dir, "results/"))
+    os.mkdir(os.path.join(script_dir, "results/"))
 except:
-	pass
+    pass
 checkAPI = True
 
 if (args.email):
-	dehashed_user = args.email
+    dehashed_user = args.email
 if (args.api_token):
-	dehashed_apikey = args.api_token
+    dehashed_apikey = args.api_token
 
 if (args.domains):
-	f = open(args.domains)
-	domains = f.read().split("\n")
-	f.close()
+    with open(args.domains) as f:
+        domains = f.read().split("\n")
 else:
-	domains = args.domain.split("\n")
+    domains = args.domain.split("\n")
 
 domains = list(filter(None, domains))
 
 for domain in domains:
-	domain = domain.strip().strip('www.')
-	url = 'https://api.dehashed.com/search'
-	params={'query':'email:'+domain,'size':'10000'}
+    domain = domain.strip().strip('www.')
+    url = 'https://api.dehashed.com/v2/search'
+    headers = {
+        "Content-Type": "application/json",
+        "Dehashed-Api-Key": dehashed_apikey
+    }
+    json_payload = {
+        "query": f"domain:{domain}",
+        "size": 10000,
+        "page": 1,
+        "de_dupe": True,
+        "wildcard": False,
+        "regex": False
+    }
 
-	headers = {
-	    "Host": "api.dehashed.com",
-	    "Connection": "keep-alive",
-	    "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0",
-	    "Accept": "application/json"
-	}
+    try:
+        if checkAPI:
+            print("[~] Verifying Dehashed API credentials. Please wait...")
 
-	try:
-		# only print API access testing once
-		if checkAPI:
-			print("[~] Verifying Dehashed API credentials. Please wait...")
-		response = requests.get(url, params=params, headers=headers, auth=(dehashed_user, dehashed_apikey))
-		data = response.json()
+        response = requests.post(url, headers=headers, json=json_payload)
+        data = response.json()
 
-		# if API does not respond with status code 200
-		if (response.status_code != 200):
-			print(bcolors.FAIL + "[x]" + bcolors.ENDC + " Status " + str(response.status_code) + " - Dehashed down or invalid API credentials.")
-			exit()
-		else:
-			# only print API access testing once
-			if checkAPI:
-				print(bcolors.OK + "[✓]" + bcolors.ENDC + " Successful API authentication. Let's go looting..." + bcolors.ENDC)
-				checkAPI = False
-			balance = data['balance']
-			print()
+        if response.status_code != 200:
+            print(bcolors.FAIL + "[x]" + bcolors.ENDC + f" Status {response.status_code} - {data.get('error', 'Unknown error')}")
+            exit()
+        else:
+            if checkAPI:
+                print(bcolors.OK + "[✓]" + bcolors.ENDC + " Successful API authentication. Let's go looting..." + bcolors.ENDC)
+                checkAPI = False
+            balance = data.get('balance', 0)
+            print()
 
-		print("[~] Performing leak check on " + str(domain))
+        print("[~] Performing leak check on " + str(domain))
 
-		# if there are no leaks available
-		if (data['total'] == 0):
-			print(bcolors.WARNING + "[✓]" + bcolors.ENDC + " Finished leak check on " + str(domain) + bcolors.ENDC)
-			print("    > No leaks available.")
-			continue
+        if data.get("total", 0) == 0:
+            print(bcolors.WARNING + "[✓]" + bcolors.ENDC + " Finished leak check on " + str(domain) + bcolors.ENDC)
+            print("    > No leaks available.")
+            continue
 
-		if(args.full):
-			alldata_filename = os.path.join(script_dir, "results/" + str(date) + "_DD_" + str(domain) + "_fulldata.csv")
-			alldata_file = csv.writer(open(alldata_filename, "a"))
-			alldata_file.writerow(["Leak ID", "Domain", "Email", "Username", "Password", "Password_Hash", "Name", "VIN", "Address", "IP Address", "Phone", "Breach", "Description", "Date", "Leak Count", "Leak Type"])
-			
-		# file containing user email addresses
-		user_file_name = os.path.join(script_dir, "results/" + str(date) + "_DD_" + str(domain) + "_users.lst")
-		user_file = open(user_file_name, "w")
-		# file containing leaked user passwords
-		password_file_name = os.path.join(script_dir, "results/" + str(date) + "_DD_" + str(domain) + "_passwords.lst")
-		password_file = open(password_file_name, "w")
+        if args.full:
+            alldata_filename = os.path.join(script_dir, f"results/{date}_DD_{domain}_fulldata.csv")
+            alldata_file = csv.writer(open(alldata_filename, "a"))
+            alldata_file.writerow(["Leak ID", "Domain", "Email", "Username", "Password", "Password_Hash", "Name", "VIN", "Address", "IP Address", "Phone", "Breach", "Description", "Date", "Leak Count", "Leak Type"])
 
-		# list to store user emails
-		users = []
-		# list to store user passwords
-		passwords = [] 
+        user_file_name = os.path.join(script_dir, f"results/{date}_DD_{domain}_users.lst")
+        user_file = open(user_file_name, "w")
+        password_file_name = os.path.join(script_dir, f"results/{date}_DD_{domain}_passwords.lst")
+        password_file = open(password_file_name, "w")
 
-		for leak in data['entries']:
-			if ("@"+domain in parseaddr(str(leak['email']))[1]):
-				identifier=str(leak['id'])
-				email=parseaddr(str(leak['email']))[1]
-				username=str(leak['username'])
-				password=str(leak['password'])
-				hashed_password=str(leak['hashed_password'])
-				name=str(leak['name'])
-				vin=str(leak['vin'])
-				address=str(leak['address'])
-				ip_address=str(leak['ip_address'])
-				phone=str(leak['phone'])
-				breach=str(leak['database_name'])
+        users = []
+        passwords = []
 
-				# add user email to list
-				users.append(str(email))
-				# add leaked pw to list
-				passwords.append(str(password))
+        for leak in data.get("entries", []):
+            emails = leak.get("email", [])
+            email = parseaddr(emails[0])[1] if emails else ""
 
-				# dump all leak data into a csv file
-				if(args.full):
-					alldata_filename = os.path.join(script_dir, "results/" + str(date) + "_DD_" + str(domain) + "_fulldata.csv")
-					alldata_file = csv.writer(open(alldata_filename, "a"))
-					breach_desc = ""
-					breach_date = ""
-					breach_leakcount = ""
-					breach_leaktypes = ""
+            if f"@{domain}" not in email:
+                continue
 
-					# if the breach comes from Cit0day
-					if "Cit0day" in breach:
-						# find index of breach with name Cit0day
-						cit0day_index = next((index for (index, d) in enumerate(breach_data) if d["name"] == "Cit0day"), None)
-						breach_desc = breach_data[cit0day_index]['description']
-						breach_date = breach_data[cit0day_index]['date']
-						breach_leakcount = breach_data[cit0day_index]['leakcount']
-						breach_leaktypes = breach_data[cit0day_index]['leaktypes']
-					else:
-						# if not from Cit0day, then loop thorugh the breach dataset
-						for leakentry in breach_data:
-							if (str(leakentry['name']).lower() == str(breach).lower()):
-								breach_desc = leakentry['description']
-								breach_date = leakentry['date']
-								breach_leakcount = leakentry['leakcount']
-								breach_leaktypes = leakentry['leaktypes']
+            identifier = leak.get("id", "")
+            username = ",".join(leak.get("username", []))
+            password = ",".join(leak.get("password", []))
+            hashed_password = ",".join(leak.get("hashed_password", []))
+            name = ",".join(leak.get("name", []))
+            vin = ",".join(leak.get("vin", []))
+            address = ",".join(leak.get("address", []))
+            ip_address = ",".join(leak.get("ip_address", []))
+            phone = ",".join(leak.get("phone", []))
+            breach = leak.get("database_name", "")
 
-					alldata_file.writerow([identifier, domain, email, username, password, hashed_password, name, vin, address, ip_address, phone, breach, breach_desc, breach_date, breach_leakcount, breach_leaktypes])
+            users.append(email)
+            passwords.append(password)
 
-		# remove duplicates and none entries from lists
-		unique_users = list(filter(None,list(dict.fromkeys(users))))
-		unique_passwords = list(filter(None,list(dict.fromkeys(passwords))))
-		
-		for usr in unique_users:
-			user_file.write(str(usr) + "\n")
+            if args.full:
+                breach_str = str(breach)
+                breach_desc = breach_date = breach_leakcount = breach_leaktypes = ""
+                if "Cit0day" in breach_str:
+                    cit0day_index = next((i for i, d in enumerate(breach_data) if d["name"] == "Cit0day"), None)
+                    if cit0day_index is not None:
+                        breach_desc = breach_data[cit0day_index]['description']
+                        breach_date = breach_data[cit0day_index]['date']
+                        breach_leakcount = breach_data[cit0day_index]['leakcount']
+                        breach_leaktypes = breach_data[cit0day_index]['leaktypes']
+                else:
+                    for leakentry in breach_data:
+                        if str(leakentry.get('name', '')).lower() == breach_str.lower():
+                            breach_desc = leakentry['description']
+                            breach_date = leakentry['date']
+                            breach_leakcount = leakentry['leakcount']
+                            breach_leaktypes = leakentry['leaktypes']
+                            break
 
-		for pw in unique_passwords:
-			password_file.write(str(pw) + "\n")
+                alldata_file.writerow([
+                    identifier, domain, email, username, password, hashed_password, name,
+                    vin, address, ip_address, phone, breach,
+                    breach_desc, breach_date, breach_leakcount, breach_leaktypes
+                ])
 
-		user_file.close()
-		password_file.close()
-		
-		print(bcolors.OK + "[✓]" + bcolors.ENDC + " Finished leak check on " + str(domain))
-		print("    > " + str(len(unique_users)) + " unique user emails found!")
-		print("    > " + str(len(unique_passwords)) + " unique passwords found!")
+        unique_users = list(filter(None, dict.fromkeys(users)))
+        unique_passwords = list(filter(None, dict.fromkeys(passwords)))
 
-	except Exception as e:
-		print(e)
-		continue
+        for usr in unique_users:
+            user_file.write(usr + "\n")
+        for pw in unique_passwords:
+            password_file.write(pw + "\n")
+
+        user_file.close()
+        password_file.close()
+
+        print(bcolors.OK + "[✓]" + bcolors.ENDC + f" Finished leak check on {domain}")
+        print(f"    > {len(unique_users)} unique user emails found!")
+        print(f"    > {len(unique_passwords)} unique passwords found!")
+
+    except Exception as e:
+        print(bcolors.FAIL + f"[!] Error: {e}" + bcolors.ENDC)
+        continue
 
 print()
 print(bcolors.INFO + "[i]" + bcolors.ENDC + " Remaining balance: " + str(balance))
+
