@@ -1,3 +1,10 @@
+## [0.2.1](https://github.com/l4rm4nd/DehashedDumper/compare/v0.2.0...v0.2.1) (2025-06-30)
+
+
+### Bug Fixes
+
+* replace improper strip; fix [#2](https://github.com/l4rm4nd/DehashedDumper/issues/2) ([ee0f660](https://github.com/l4rm4nd/DehashedDumper/commit/ee0f660fd05bb316855452d591bf6a11badc1175))
+
 ## [0.2.0](https://github.com/l4rm4nd/DehashedDumper/compare/v0.1.1...v0.2.0) (2025-05-06)
 
 
