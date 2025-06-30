@@ -66,7 +66,7 @@ else:
 domains = list(filter(None, domains))
 
 for domain in domains:
-    domain = domain.strip().strip('www.')
+    domain = domain.strip().removeprefix('www.')
     url = 'https://api.dehashed.com/v2/search'
     headers = {
         "Content-Type": "application/json",
